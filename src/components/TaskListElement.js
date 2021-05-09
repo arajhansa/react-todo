@@ -8,11 +8,13 @@ function TaskListElement({element, onCompleted}) {
                 <div className="flex items-center">
                     <input type="checkbox"
                            checked={element.isCompleted}
-                           onChange={(event) => onCompleted(event, element)}
+                           onChange={event => onCompleted(event, element)}
                     />
                     <p className="ml-4">{element.text}</p>
                 </div>
-                <span className="cursor-pointer"><TrashIcon className="h-5 w-5 text-gray-500"/></span>
+                <span className="cursor-pointer">
+                    <TrashIcon className="h-5 w-5 text-gray-500"/>
+                </span>
             </div>
         </li>
     );
