@@ -1,15 +1,28 @@
 import React from "react";
+import {useState} from "react";
 
 import TaskListElement from "./TaskListElement";
 
-function TaskList({list}) {
+function TaskList() {
+    const [list, setList] = useState([]);
 
-    const items = (element) => <TaskListElement element={element} />
+    console.log("rendered");
+
+    const onCompleted = (event, element) => {
+        const index = list.indexOf(element);
+        list[index].isCompleted = event.target.checked;
+        console.log(list);
+        setList([...list]);
+    };
 
     return (
         <div className="w-4/5 m-auto mt-6">
             <ul className="space-y-6">
-                {list.map(items)}
+                {list.map((element) => <TaskListElement
+                    key={element.id}
+                    element={element}
+                    onCompleted={onCompleted}
+                />)}
             </ul>
         </div>
     );
