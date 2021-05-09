@@ -17,16 +17,18 @@ function TaskList({list, setList}) {
     }
 
     return (
-        <div className="w-4/5 m-auto mt-6">
-            <ul className="space-y-6">
-                {list.map((element) =>
-                    <TaskListElement
-                        key={element.id}
-                        element={element}
-                        onCompleted={onCompleted}
-                        onDeleted={onDeleted}
-                    />)}
-            </ul>
+        <div className="w-4/5 m-auto mt-6 ">
+            <div className="overflow-y-scroll h-96 pr-8">
+                <ul className="space-y-6">
+                    {list.map((element) =>
+                        <TaskListElement
+                            key={element.id}
+                            element={element}
+                            onCompleted={onCompleted}
+                            onDeleted={onDeleted}
+                        />)}
+                </ul>
+            </div>
         </div>
     );
 }
