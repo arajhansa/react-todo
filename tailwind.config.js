@@ -2,7 +2,9 @@ module.exports = {
     purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
     darkMode: false,
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {display:["Raleway"]}
+        },
     },
     variants: {
         extend: {},
