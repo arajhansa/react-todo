@@ -1,4 +1,5 @@
 import React from "react";
+import {TrashIcon} from "@heroicons/react/outline";
 
 function TaskListElement({element}) {
     return (
@@ -8,7 +9,7 @@ function TaskListElement({element}) {
                     <input type="checkbox" defaultChecked={element.isDeleted} />
                     <p className="ml-4">{element.text}</p>
                 </div>
-                <button>Delete</button>
+                <span className="cursor-pointer"><TrashIcon className="h-5 w-5 text-gray-500"/></span>
             </div>
         </li>
     );
