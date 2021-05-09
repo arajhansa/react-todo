@@ -10,6 +10,12 @@ function TaskList({list, setList}) {
         setList([...list]);
     };
 
+    const onDeleted = (element) => {
+        const index = list.indexOf(element)
+        list.splice(index,1)
+        setList([...list])
+    }
+
     return (
         <div className="w-4/5 m-auto mt-6">
             <ul className="space-y-6">
@@ -18,6 +24,7 @@ function TaskList({list, setList}) {
                         key={element.id}
                         element={element}
                         onCompleted={onCompleted}
+                        onDeleted={onDeleted}
                     />)}
             </ul>
         </div>
