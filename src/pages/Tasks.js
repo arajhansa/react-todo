@@ -5,7 +5,16 @@ import TaskInput from "../components/TaskInput";
 import TaskList from "../components/TaskList";
 
 function Tasks() {
-    const [list, setList] = useState([]);
+    const [list, updateList] = useState(() => {
+        const serializedList = localStorage.getItem("tasks")
+        if (serializedList) return JSON.parse(serializedList)
+        return [];
+    });
+
+    const setList = (list) => {
+        localStorage.setItem("tasks", JSON.stringify(list))
+        updateList(list)
+    }
 
     const addTask = (text) => {
         const element = {
