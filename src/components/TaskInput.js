@@ -17,9 +17,7 @@ function TaskInput({addTask}) {
             <input ref={inputRef} onKeyPress={(event => {
                 addNewTask(event)
             })} placeholder="Enter To-Do Task" className="border-b-2 border-gray-300 p-2 focus:outline-none"/>
-            {/*<button className="border-2 bg-red-300 p-2 focus:outline-none hover:bg-blue-300"
-                    onClick={addNewTask}>Add
-            </button>*/}
+
             <span onClick={() => addNewTask()} className="cursor-pointer">
                     <PlusCircleIcon className="h-8 w-8 text-green-300"/>
             </span>

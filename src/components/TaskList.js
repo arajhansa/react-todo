@@ -16,9 +16,15 @@ function TaskList({list, setList}) {
         setList([...list])
     }
 
+    const deleteCompletedTask = (event) => {
+        const inCompletedTask = list.filter(it => !it.isCompleted)
+        if (event && event.key === "Delete")  setList([...inCompletedTask])
+    }
+
+
     return (
-        <div className="w-4/5 m-auto mt-6 ">
-            <div className="overflow-y-scroll h-96 pr-8">
+        <div className="w-4/5 m-auto mt-6">
+            <div onKeyPress={ deleteCompletedTask} className="overflow-y-scroll h-96 pr-8">
                 <ul className="space-y-6">
                     {list.map((element) =>
                         <TaskListElement
