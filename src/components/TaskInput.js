@@ -11,14 +11,13 @@ function TaskInput({addTask}) {
         inputRef.current.value = ""
     }
 
-
     return (
         <div className="flex justify-around py-8 items-center">
-            <input ref={inputRef} onKeyPress={(event => {
-                addNewTask(event)
-            })} placeholder="Enter To-Do Task" className="border-b-2 border-gray-300 p-2 focus:outline-none"/>
+            <input ref={inputRef} onKeyPress={addNewTask}
+                   placeholder="Enter To-Do Task"
+                   className="border-b-2 border-gray-300 p-2 focus:outline-none"/>
 
-            <span onClick={() => addNewTask()} className="cursor-pointer">
+            <span onClick={addNewTask} className="cursor-pointer">
                     <PlusCircleIcon className="h-8 w-8 text-green-300"/>
             </span>
         </div>

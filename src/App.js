@@ -4,7 +4,7 @@ import Tasks from "./pages/Tasks";
 
 function App() {
     return (
-        <Tasks />
+        <Tasks/>
     );
 }
 

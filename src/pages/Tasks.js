@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { v4 as uuidv4 } from 'uuid';
+import {v4 as uuidv4} from 'uuid';
 
 import TaskInput from "../components/TaskInput";
 import TaskList from "../components/TaskList";
@@ -23,7 +23,7 @@ function Tasks() {
             </div>
 
             <div className="bg-white h-2/3 w-2/3 max-w-md shadow-lg border rounded-md ">
-                <TaskInput addTask={addTask} />
+                <TaskInput addTask={addTask}/>
                 <TaskList list={list} setList={setList}/>
             </div>
         </div>
