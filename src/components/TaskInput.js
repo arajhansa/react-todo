@@ -17,7 +17,7 @@ function TaskInput({addTask}) {
                    placeholder="Enter To-Do Task"
                    className="border-b-2 border-gray-300 p-2 focus:outline-none"/>
 
-            <span onClick={addNewTask} className="cursor-pointer">
+            <span onClick={() => addNewTask()} className="cursor-pointer">
                     <PlusCircleIcon className="h-8 w-8 text-green-300"/>
             </span>
         </div>
