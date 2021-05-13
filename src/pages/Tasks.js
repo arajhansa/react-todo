@@ -1,20 +1,19 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {v4 as uuidv4} from 'uuid';
 
 import TaskInput from "../components/TaskInput";
 import TaskList from "../components/TaskList";
 
 function Tasks() {
-    const [list, updateList] = useState(() => {
+    const [list, setList] = useState(() => {
         const serializedList = localStorage.getItem("tasks")
         if (serializedList) return JSON.parse(serializedList)
         return [];
     });
 
-    const setList = (list) => {
+    useEffect(() => {
         localStorage.setItem("tasks", JSON.stringify(list))
-        updateList(list)
-    }
+    });
 
     const addTask = (text) => {
         const element = {
