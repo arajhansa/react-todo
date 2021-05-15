@@ -4,9 +4,9 @@ import TaskListElement from "./TaskListElement";
 
 function TaskList({list, setList}) {
 
-  const onCompleted = (event, element) => {
+  const onCompleted = (element) => {
     const index = list.indexOf(element);
-    list[index].isCompleted = event.target.checked;
+    list[index].isCompleted = !element.isCompleted;
     setList([...list]);
   };
 

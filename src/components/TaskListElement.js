@@ -9,9 +9,9 @@ function TaskListElement({element, onCompleted, onDeleted}) {
           <div className="flex items-center">
             <input type="checkbox"
                    checked={element.isCompleted}
-                   onChange={event => onCompleted(event, element)}
+                   onChange={() => onCompleted(element)}
             />
-            <p className="ml-4">{element.text}</p>
+            <p className="ml-4 cursor-pointer" onClick={() => onCompleted(element)}>{element.text}</p>
           </div>
           <span onClick={() => onDeleted(element)} className="cursor-pointer">
                     <TrashIcon className="h-5 w-5 text-gray-500"/>
