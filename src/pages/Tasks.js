@@ -1,4 +1,5 @@
 import React from "react";
+import DateBanner from "../components/DateBanner";
 
 import TaskInput from "../components/TaskInput";
 import TaskList from "../components/TaskList";
@@ -15,6 +16,7 @@ function Tasks() {
         </div>
 
         <div className="bg-white h-2/3 w-2/3 max-w-md shadow-lg border rounded-md flex flex-col ">
+          <DateBanner/>
           <TaskInput list={list} setList={setList}/>
           <TaskList list={list} setList={setList}/>
         </div>
