@@ -17,12 +17,12 @@ function TaskInput({list, setList}) {
   }
 
   return (
-      <div className="flex justify-around py-8 items-center">
+      <div className="flex flex-col justify-around py-8 items-center">
         <input ref={inputRef} onKeyPress={addNewTask}
                placeholder="Enter To-Do Task"
-               className="border-b-2 border-gray-300 p-2 focus:outline-none"/>
+               className="border-b-2 flex sm:w-16 sm:mx-2 mx-4 border-gray-300 p-2 focus:outline-none"/>
 
-        <span onClick={() => addNewTask()} className="cursor-pointer">
+        <span onClick={() => addNewTask()} className="cursor-pointer mt-6 ">
                     <PlusCircleIcon className="h-8 w-8 text-green-300"/>
             </span>
       </div>
