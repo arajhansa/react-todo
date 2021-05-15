@@ -19,7 +19,7 @@ export default function useLocalStorageState(key, initialState, {
       localStorage.removeItem(keyRef.current)
     }
     keyRef.current = key
-  })
+  }, [key, state, serialize])
 
   return [state, setState]
 }
