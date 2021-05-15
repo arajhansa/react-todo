@@ -3,9 +3,9 @@ import React from "react";
 import Tasks from "./pages/Tasks";
 
 function App() {
-    return (
-        <Tasks/>
-    );
+  return (
+      <Tasks/>
+  );
 }
 
 export default App;
