@@ -1,5 +1,5 @@
 import React, {useRef} from "react";
-import {PlusCircleIcon} from "@heroicons/react/outline";
+import {MenuAlt2Icon} from "@heroicons/react/outline";
 
 function TaskInput({list, setList}) {
   const inputRef = useRef();
@@ -17,10 +17,13 @@ function TaskInput({list, setList}) {
   }
 
   return (
-      <div className="flex flex-col justify-around py-8 items-center">
-        <input ref={inputRef} onKeyPress={addNewTask}
-               placeholder="Enter To-Do Task"
-               className="border-b-2 flex mx-4 w-48 sm:w-auto border-gray-300 p-2 focus:outline-none"/>
+      <div className="flex justify-around py-8 items-center">
+        <div className="border-b-2 border-gray-300 flex items-center">
+          <MenuAlt2Icon className="h-5 w-5 mx-2 text-gray-600"/>
+          <input ref={inputRef} onKeyPress={addNewTask}
+                 placeholder="Add a Task"
+                 className=" flex w-36 sm:w-72 p-2 focus:outline-none"/>
+        </div>
       </div>
   );
 }
