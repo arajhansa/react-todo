@@ -4,14 +4,15 @@ import DateBanner from "../components/DateBanner";
 import TaskInput from "../components/TaskInput";
 import TaskList from "../components/TaskList";
 import useLocalStorageState from "../hooks/LocalStorage";
+import TaskComplete from "../components/TaskComplete";
 
 function Tasks() {
   const [list, setList] = useLocalStorageState("tasks", []);
 
   return (
-      <div className="bg-gray-100 h-screen flex flex-col justify-center items-center">
+      <div className="bg-gray-100 h-screen flex flex-col items-center">
 
-        <div className="p-4">
+        <div className="p-4 mt-16">
           <h1 className="text-3xl font-display">To-Do List App</h1>
         </div>
 
@@ -19,6 +20,7 @@ function Tasks() {
           <DateBanner/>
           <TaskInput list={list} setList={setList}/>
           <TaskList list={list} setList={setList}/>
+          <TaskComplete list={list} setList={setList}/>
         </div>
 
       </div>
