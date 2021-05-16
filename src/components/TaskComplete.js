@@ -1,4 +1,9 @@
-export default function TaskComplete({list, setList}) {
+import React, {useContext} from "react";
+import {TaskContext} from "../contexts/TaskListContext";
+
+export default function TaskComplete() {
+  const [list, setList] = useContext(TaskContext)
+
   const clearCompletedTasks = () => {
     const incompleteTasks = list.filter(it => !it.isCompleted)
     setList([...incompleteTasks])

@@ -3,12 +3,10 @@ import DateBanner from "../components/DateBanner";
 
 import TaskInput from "../components/TaskInput";
 import TaskList from "../components/TaskList";
-import useLocalStorageState from "../hooks/LocalStorage";
 import TaskComplete from "../components/TaskComplete";
+import TaskListContext from "../contexts/TaskListContext";
 
 function Tasks() {
-  const [list, setList] = useLocalStorageState("tasks", []);
-
   return (
       <div className="bg-gray-100 h-screen flex flex-col items-center">
 
@@ -17,10 +15,12 @@ function Tasks() {
         </div>
 
         <div className="bg-white h-2/3 w-2/3 max-w-md shadow-lg border rounded-md flex flex-col">
-          <DateBanner/>
-          <TaskInput list={list} setList={setList}/>
-          <TaskList list={list} setList={setList}/>
-          <TaskComplete list={list} setList={setList}/>
+          <TaskListContext>
+            <DateBanner/>
+            <TaskInput/>
+            <TaskList/>
+            <TaskComplete/>
+          </TaskListContext>
         </div>
 
       </div>

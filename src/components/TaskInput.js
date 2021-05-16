@@ -1,7 +1,9 @@
-import React, {useRef} from "react";
+import React, {useContext, useRef} from "react";
 import {MenuAlt2Icon} from "@heroicons/react/outline";
+import {TaskContext} from "../contexts/TaskListContext";
 
-function TaskInput({list, setList}) {
+function TaskInput() {
+  const [list, setList] = useContext(TaskContext)
   const inputRef = useRef();
 
   const addNewTask = (event) => {
