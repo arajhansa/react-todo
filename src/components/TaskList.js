@@ -3,6 +3,8 @@ import React, {useContext} from "react";
 import TaskListElement from "./TaskListElement";
 import {TaskContext} from "../contexts/TaskListContext";
 
+import "./TaskList.css"
+
 function TaskList() {
   const [list] = useContext(TaskContext)
 
