@@ -15,8 +15,8 @@ function Tasks() {
         </div>
 
         <div className="bg-white h-2/3 w-4/5 max-w-md shadow-lg border rounded-md flex flex-col">
+          <DateBanner/>
           <TaskListContext>
-            <DateBanner/>
             <TaskInput/>
             <TaskList/>
             <TaskComplete/>

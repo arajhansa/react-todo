@@ -17,8 +17,8 @@ export default function useLocalStorageState(key, initialState, {
     localStorage.setItem(key, serialize(state))
     if (keyRef.current !== key) {
       localStorage.removeItem(keyRef.current)
+      keyRef.current = key
     }
-    keyRef.current = key
   }, [key, state, serialize])
 
   return [state, setState]
