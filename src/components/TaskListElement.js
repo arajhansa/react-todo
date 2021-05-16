@@ -1,9 +1,10 @@
-import React, {useContext} from "react";
+import React from "react";
 import {TrashIcon} from "@heroicons/react/outline";
-import {TaskContext} from "../contexts/TaskListContext";
+
+import {useTextListContext} from "../context/TaskListContext";
 
 function TaskListElement({element}) {
-  const [list, setList] = useContext(TaskContext)
+  const [list, setList] = useTextListContext();
 
   const onCompleted = () => {
     const index = list.indexOf(element);

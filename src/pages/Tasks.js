@@ -1,10 +1,10 @@
 import React from "react";
-import DateBanner from "../components/DateBanner";
 
+import DateBanner from "../components/DateBanner";
 import TaskInput from "../components/TaskInput";
 import TaskList from "../components/TaskList";
 import TaskComplete from "../components/TaskComplete";
-import TaskListContext from "../contexts/TaskListContext";
+import TaskListContext from "../context/TaskListContext";
 
 function Tasks() {
   return (

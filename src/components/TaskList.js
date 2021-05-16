@@ -1,12 +1,12 @@
-import React, {useContext} from "react";
+import React from "react";
 
 import TaskListElement from "./TaskListElement";
-import {TaskContext} from "../contexts/TaskListContext";
+import {useTextListContext} from "../context/TaskListContext";
 
 import "./TaskList.css"
 
 function TaskList() {
-  const [list] = useContext(TaskContext)
+  const [list] = useTextListContext();
 
   return (
       <div className="w-5/6 ml-10 m-auto mt-2 mb-6 flex overflow-hidden">
