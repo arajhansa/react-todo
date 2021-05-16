@@ -1,6 +1,6 @@
 import React, {createContext, useContext} from "react";
 
-import useLocalStorageState from "../persistance/LocalStorage";
+import useLocalStorageState from "../persistence/LocalStorage";
 
 const TaskContext = createContext();
 
