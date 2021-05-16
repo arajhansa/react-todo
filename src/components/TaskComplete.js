@@ -10,9 +10,7 @@ export default function TaskComplete() {
     setList([...incompleteTasks])
   }
 
-  const clearAllTasks = () => {
-    setList([])
-  }
+  const clearAllTasks = () => setList([])
 
   return (
       <div className="my-4 mt-auto mx-auto">

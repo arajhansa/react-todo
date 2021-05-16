@@ -15,7 +15,7 @@ function TaskInput() {
       isCompleted: false,
       text: inputRef.current.value
     }
-    setList([...list, element])
+    setList([element, ...list])
     inputRef.current.value = ""
   }
 
