@@ -6,7 +6,7 @@ export default function DateBanner(){
     const days = ["Sunday", "Monday", "Tuesday","Wednesday", "Thursday","Friday", "Saturday" ]
 
     return(
-        <div className= "flex justify-around mt-8 items-center text-gray-600">
+        <div className= "flex justify-around mt-4 sm:mt-8 items-center text-gray-600">
             <div className="flex justify-self-center">
                 <h1 className="font-medium text-4xl sm:text-5xl mr-2">{date.getDate()}</h1>
                 <div className="flex flex-col justify-end">

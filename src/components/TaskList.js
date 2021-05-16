@@ -10,7 +10,7 @@ function TaskList() {
 
   return (
       <div className="w-4/5 m-auto mt-2 mb-6 flex overflow-hidden">
-        <div className="overflow-y-auto pr-8 w-full">
+        <div className="overflow-y-scroll pr-8 w-full">
           <ul className="space-y-6 w-full">
             {list.map(element => <TaskListElement key={element.id} element={element}/>)}
           </ul>
