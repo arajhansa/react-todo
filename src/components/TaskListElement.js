@@ -26,7 +26,7 @@ function TaskListElement({element}) {
                    checked={element.isCompleted}
                    onChange={() => onCompleted()}
             />
-            <p className="ml-4 cursor-pointer" onClick={() => onCompleted()}>{element.text}</p>
+            <p className="ml-4 cursor-pointer break-all mr-8" onClick={() => onCompleted()}>{element.text}</p>
           </div>
           <span onClick={() => onDeleted()} className="cursor-pointer">
                     <TrashIcon className="h-5 w-5 text-gray-500"/>

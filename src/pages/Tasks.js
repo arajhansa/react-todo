@@ -14,7 +14,7 @@ function Tasks() {
           <h1 className="text-3xl font-display">To-Do List App</h1>
         </div>
 
-        <div className="bg-white h-2/3 w-4/5 max-w-md shadow-lg border rounded-md flex flex-col">
+        <div className="bg-white h-2/3 sm:h-3/4 w-4/5 max-w-md shadow-lg border rounded-md flex flex-col">
           <DateBanner/>
           <TaskListContext>
             <TaskInput/>
