@@ -10,12 +10,20 @@ export default function TaskComplete() {
     setList([...incompleteTasks])
   }
 
+  const clearAllTasks = () => {
+    setList([])
+  }
+
   return (
-      <div className="my-4 mt-auto mx-auto ">
-          <button onClick={clearCompletedTasks}
-                  className="py-2 px-3 border-2 border-gray-400 focus:outline-none rounded-md text-gray-600 hover:bg-gray-100 text-sm">
-            Clear Completed
-          </button>
+      <div className="my-4 mt-auto mx-auto">
+        <button onClick={clearCompletedTasks}
+                className="mr-2 py-2 px-3 border-2 border-gray-400 focus:outline-none rounded-md text-gray-600 hover:bg-gray-100 text-sm">
+          Clear Completed
+        </button>
+        <button onClick={clearAllTasks}
+                className="ml-2 py-2 px-3 bg-gray-200 border-2 border-gray-400 focus:outline-none rounded-md text-gray-600 hover:bg-gray-100 text-sm">
+          Clear All
+        </button>
       </div>
   );
 }
