@@ -1,6 +1,6 @@
 import React, {createContext, useContext} from "react";
 
-import {useDateContext, useDateTaskListContext} from "./DateContext";
+import {useDateTaskListContext} from "./DateContext";
 
 const TaskContext = createContext();
 
