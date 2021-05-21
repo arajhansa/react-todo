@@ -1,6 +1,6 @@
 import React, {createContext, useContext} from "react";
 
-import useLocalStorageState from "../persistence/LocalStorage";
+import {useDateContext, useDateTaskListContext} from "./DateContext";
 
 const TaskContext = createContext();
 
@@ -11,6 +11,13 @@ export function useTextListContext() {
 }
 
 export default function TaskListContext(props) {
-  const stateManager = useLocalStorageState("tasks", []);
-  return <TaskContext.Provider value={stateManager} {...props} />
+  const [date, list, setList] = useDateTaskListContext();
+
+  const taskList = list[date] || []
+  const setTaskList = (newList) => {
+    list[date] = newList
+    setList({...list})
+  }
+
+  return <TaskContext.Provider value={[taskList, setTaskList]} {...props} />
 }

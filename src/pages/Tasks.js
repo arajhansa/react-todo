@@ -5,6 +5,7 @@ import TaskInput from "../components/TaskInput";
 import TaskList from "../components/TaskList";
 import TaskComplete from "../components/TaskComplete";
 import TaskListContext from "../context/TaskListContext";
+import {DateProviderContext} from "../context/DateContext";
 
 function Tasks() {
   return (
@@ -15,12 +16,14 @@ function Tasks() {
         </div>
 
         <div className="bg-white h-2/3 sm:h-3/4 w-4/5 max-w-md shadow-lg border rounded-md flex flex-col">
-          <DateBanner/>
-          <TaskListContext>
-            <TaskInput/>
-            <TaskList/>
-            <TaskComplete/>
-          </TaskListContext>
+          <DateProviderContext>
+            <DateBanner/>
+            <TaskListContext>
+              <TaskInput/>
+              <TaskList/>
+              <TaskComplete/>
+            </TaskListContext>
+          </DateProviderContext>
         </div>
 
       </div>
