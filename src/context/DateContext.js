@@ -1,4 +1,4 @@
-import {createContext, useContext} from "react";
+import {createContext, useContext, useState} from "react";
 import useLocalStorageState from "../persistence/LocalStorage";
 
 const DateContext = createContext();
@@ -16,9 +16,7 @@ export function useDateContext() {
 }
 
 export function DateProviderContext(props) {
-  const currentDate = new Date();
-
-  const [date, setDate] = useLocalStorageState("selectedDate", currentDate, {deserialize: (date) => new Date(JSON.parse(date))})
+  const [date, setDate] = useState(new Date())
   const [dateListMap, setDateListMap] = useLocalStorageState("dateListMap", {})
 
   return <DateContext.Provider value={[date, setDate, getFullDate(date), dateListMap, setDateListMap]} {...props} />
